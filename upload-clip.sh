@@ -28,7 +28,7 @@ if [[ "${file}" != "$(cat ${streamingdir}/lastrec.txt)" ]]; then
     query="INSERT INTO RecordedVideo (uuid,videoDate,owningUser,channelName, channelID, description, topic, views, length, videoLocation, thumbnailLocation, gifLocation, pending, allowComments, published, originalStreamID) VALUES('${uuid}','${date}', 1, '${title}', ${audi}, '${desc}', 1, 0, ${length}, '${dir}/${uuid}.mp4', '${dir}/${uuid}.jpg', NULL, 0, 1, 1, NULL);"
     echo ${query} >/tmp/query.txt
     scp "/tmp/query.txt" "${ssh}":/root/osp/osp-mariadb/query.txt # -p ${port}
-    ssh -p ${port} ${ssh} 'docker exec osp-osp_db-1 bash -c "/usr/bin/mariadb -p -u root --password=REPLACEME -D osp < /var/lib/mysql/query.txt"'
+    ssh ${ssh} 'docker exec osp-osp_db-1 bash -c "/usr/bin/mariadb -p -u root --password=REPLACEME -D osp < /var/lib/mysql/query.txt"'
     echo $file >~/lastrec.txt
 else 
 	echo "no new recording, exiting"
