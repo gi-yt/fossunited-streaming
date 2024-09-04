@@ -4,12 +4,12 @@ day=1
 dir="/home/arya/streaming"
 obs-cmd recording stop
 
-bash ~/upload-clip.sh &
+bash ${dir}/upload-clip.sh &
 sleep 5
 
 title="$(cat ${dir}/title.txt)"
 
-newtitle="$(grep -A1 ${title} ${dir}/audi${audi}-day${day}-schedule | tail -n1)"
+newtitle=$(grep -A1 "${title}" ${dir}/audi${audi}-day${day}-schedule | tail -n1)
 echo "${newtitle}" > "${dir}/title.txt"
 
 obs-cmd recording start
