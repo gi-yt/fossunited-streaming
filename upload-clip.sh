@@ -15,7 +15,7 @@ if [[ "${file}" != "$(cat ${streamingdir}/lastrec.txt)" ]]; then
     title="${txt} | Audi ${audi} | IndiaFOSS 2024"
     desc="This is the raw footage of a talk, presented at IndiaFOSS 2024. You can see the talks of IndiaFOSS through these videos until our professionally edited videos are uploaded."
     date="$(date +'%Y-%m-%d %H:%M:%S')"
-    length="$(ffmpeg -i ${file} 2>&1 | grep Duration | cut -d ' ' -f 4 | sed s/,// | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')"
+    length="$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 ${file})"
     thumbnail="/tmp/thumb.jpg"
 
     sed "s/TALKNAME_REPLACEME/${title}/" ${basethumb} >/tmp/thumb.svg
