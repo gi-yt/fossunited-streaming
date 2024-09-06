@@ -1,6 +1,6 @@
 #!/bin/bash
-homedir="/home/arya"
-streamingdir="${homedir}/streaming"
+homedir="/home/$(whoami)"
+streamingdir="${homedir}/fossunited-streaming"
 ssh="root@188.245.101.133"
 vids="${homedir}/Videos"
 file="${vids}/$(ls -Art ${vids} | tail -n 1)"
@@ -19,7 +19,7 @@ if [[ "${file}" != "$(cat ${streamingdir}/lastrec.txt)" ]]; then
     thumbnail="/tmp/thumb.jpg"
 
     sed "s/TALKNAME_REPLACEME/${title}/" ${basethumb} >/tmp/thumb.svg
-    convert /tmp/thumb.svg "${thumbnail}"
+    magick /tmp/thumb.svg "${thumbnail}"
 
     scp "${file}" "${ssh}":/root/osp/osp-app/data/www/videos/${dir}/${uuid}.mp4      #-p ${port}
     scp "${thumbnail}" "${ssh}":/root/osp/osp-app/data/www/videos/${dir}/${uuid}.jpg #-p ${port}
