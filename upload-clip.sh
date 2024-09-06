@@ -29,7 +29,7 @@ if [[ "${file}" != "$(cat ${streamingdir}/lastrec.txt)" ]]; then
     echo ${query} >/tmp/query.txt
     scp "/tmp/query.txt" "${ssh}":/root/osp/osp-mariadb/query.txt # -p ${port}
     ssh ${ssh} 'docker exec osp-osp_db-1 bash -c "/usr/bin/mariadb -p -u root --password=REPLACEME -D osp < /var/lib/mysql/query.txt"'
-    echo $file >~/lastrec.txt
+    echo $file > ${streamingdir}/lastrec.txt
 else 
 	echo "no new recording, exiting"
 fi

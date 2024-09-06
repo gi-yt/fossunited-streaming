@@ -451,7 +451,7 @@
             "id": "image_source",
             "versioned_id": "image_source",
             "settings": {
-                "file": "/home/arya/Downloads/Slide 16_9 - 3.png"
+                "file": "/home/zerodha-foss/Downloads/Slide 16_9 - 3.png"
             },
             "mixers": 0,
             "sync": 0,
@@ -477,7 +477,7 @@
             "id": "image_source",
             "versioned_id": "image_source",
             "settings": {
-                "file": "/home/arya/Downloads/Slide 16_9 - 4.png"
+                "file": "/home/zerodha-foss/Downloads/Slide 16_9 - 4.png"
             },
             "mixers": 0,
             "sync": 0,
@@ -503,7 +503,7 @@
             "id": "image_source",
             "versioned_id": "image_source",
             "settings": {
-                "file": "/home/arya/Downloads/Slide 16_9 - 5.png"
+                "file": "/home/zerodha-foss/Downloads/Slide 16_9 - 5.png"
             },
             "mixers": 0,
             "sync": 0,
@@ -755,7 +755,7 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "local_file": "/home/arya/streaming/assets/break.mp4",
+                "local_file": "/home/zerodha-foss/streaming/assets/break.mp4",
                 "looping": true
             },
             "mixers": 255,
@@ -791,7 +791,7 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "local_file": "/home/arya/streaming/assets/lunch.mp4",
+                "local_file": "/home/zerodha-foss/streaming/assets/lunch.mp4",
                 "looping": true
             },
             "mixers": 255,
@@ -827,7 +827,7 @@
             "id": "ffmpeg_source",
             "versioned_id": "ffmpeg_source",
             "settings": {
-                "local_file": "/home/arya/streaming/assets/starting.mp4",
+                "local_file": "/home/zerodha-foss/streaming/assets/starting.mp4",
                 "looping": true
             },
             "mixers": 255,
